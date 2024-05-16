@@ -984,7 +984,8 @@ static NSSet<NSString*> *kanaKeys;
 				[[UIDevice currentDevice] _playSystemSound:1123LL];
 			}
 			else{
-				if(IS_IOS_OR_NEWER(iOS_14_0))	[self playDeleteKeyFeedback:repeat];
+				if(IS_IOS_OR_NEWER(iOS_16_0)) {}
+				else if(IS_IOS_OR_NEWER(iOS_14_0)) [self playDeleteKeyFeedback:repeat];
 				else if(IS_IOS_OR_NEWER(iOS_13_0)) [self playKeyClickSound:repeat];
 				else if(IS_IOS_OR_NEWER(iOS_11_0)) [[self feedbackGenerator] _playFeedbackForActionType:3 withCustomization:nil];
 				else if(IS_IOS_OR_NEWER(iOS_10_0)){
